@@ -78,13 +78,6 @@ document.querySelector("form", addEventListener("submit", (e) => {
   let calculateYears = Math.floor(days / 365)
   let calculateMonths = actualDate.getMonth() - date.getMonth() + 11
 
-  if(calculateMonths % 12 == 0){
-    calculateMonths = 0
-  }
-  if(calculateMonths >= 12){
-    calculateMonths = calculateMonths % 12
-  }
-
   let calculateDays = actualDate.getTime() - new Date(actualDate.getFullYear(), actualDate.getMonth() - 1, date.getDate() + 1).getTime()
   calculateDays = Math.floor(calculateDays / (1000 * 60 * 60 * 24)) + 1
 
@@ -92,6 +85,14 @@ document.querySelector("form", addEventListener("submit", (e) => {
     calculateDays = calculateDays % 30 - 1
     calculateMonths ++
   }
+
+  if(calculateMonths % 12 == 0){
+    calculateMonths = 0
+  }
+  if(calculateMonths > 12){
+    calculateMonths = calculateMonths % 12
+  }
+
 
   document.querySelector(".year").textContent = calculateYears
   document.querySelector(".month").textContent = calculateMonths
