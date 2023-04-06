@@ -20,7 +20,7 @@ body{
   user-select: none;
   font-family: 'Poppins', sans-serif;
   font-size: 32px;
-  background-color: var(--Light-grey);
+  background-color: var(--Off-white);
   display: grid;
   place-items: center;
   height: 100vh;
