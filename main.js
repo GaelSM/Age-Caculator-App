@@ -81,7 +81,7 @@ document.querySelector("form", addEventListener("submit", (e) => {
   if(calculateMonths % 12 == 0){
     calculateMonths = 0
   }
-  if(calculateMonths > 12){
+  if(calculateMonths >= 12){
     calculateMonths = calculateMonths % 12
   }
 
